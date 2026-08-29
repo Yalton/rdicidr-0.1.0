@@ -37,3 +37,8 @@ override.tf.json
 *_override.tf.json
 secrets.tfvars
 *.auto.tfvars
+*.tfvars
+!*.tfvars.example
+.terraform.tfstate.lock.info
+terraform.rc
+.terraformrc
