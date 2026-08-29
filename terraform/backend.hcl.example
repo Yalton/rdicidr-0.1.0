@@ -1,0 +1,11 @@
+# Copy to backend.hcl and adjust, then:
+#   terraform init -backend-config=backend.hcl
+#
+# The bucket must already exist; it cannot be managed by the state it holds.
+# Native S3 locking (use_lockfile) requires Terraform >= 1.10; on older
+# versions use a DynamoDB table instead via dynamodb_table = "...".
+bucket       = "CHANGE-ME-rdicidr-tfstate"
+key          = "rdicidr/terraform.tfstate"
+region       = "us-east-1"
+encrypt      = true
+use_lockfile = true
